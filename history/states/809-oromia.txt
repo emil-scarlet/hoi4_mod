@@ -1,0 +1,33 @@
+state=
+{
+	id=809
+	name="STATE_809"
+	manpower = 1747956
+	resources={
+		tungsten=1
+	}
+	
+	state_category = pastoral
+
+	history=
+	{
+		owner = ETH
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		victory_points = { 
+			8062 1 
+		}
+		add_core_of = ETH
+
+		1936.6.1 = {
+			owner = ITA
+			controller = ITA
+		}
+	}
+
+	provinces=
+	{
+8036 8062 10775 	}
+}

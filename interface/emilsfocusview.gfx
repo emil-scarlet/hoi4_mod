@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_FOCUS_FILTER_SECOND_ETHIOPIAN_WAR"
+		texturefile = "gfx/interface/focusview/filter/sec_eth_war.dds"
+	}
+
+}

@@ -1,0 +1,16 @@
+﻿l_english:
+#states
+ STATE_807:0 "オガデン"
+ STATE_808:0 "ティグライ"
+ STATE_809:0 "オロミア"
+ STATE_810:0 "アムハラ"
+ STATE_811:0 "アファール"
+ STATE_812:0 "プントランド"
+ STATE_813:0 "ジュバランド"
+ #VPs
+ VICTORY_POINTS_10734:0 "ジンマ"
+ VICTORY_POINTS_12941:0 "キスマヨ"
+ VICTORY_POINTS_4909:0 "ガローウェ"
+ VICTORY_POINTS_4954:0 "バハルダール"
+ VICTORY_POINTS_8062:0 "モヤレ"
+ VICTORY_POINTS_12714:0 "ジジガ"

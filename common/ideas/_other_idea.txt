@@ -1,0 +1,113 @@
+ideas = {
+
+	country = {
+	
+		gustav_v = {
+			
+			allowed = {
+				NOT = { has_government = communism }
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = gustav_v
+
+			
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+		haakon_vii = {
+			
+			allowed = {
+				NOT = { 
+					has_government = communism
+					has_government = fascism
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = haakon_vii
+
+			
+			modifier = {
+				stability_factor = 0.05
+				resistance_growth_on_our_occupied_states = 0.1 
+			}
+		}
+		leopold_iii = {
+			
+			allowed = {
+				NOT = { 
+					has_government = communism
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = leopold_iii
+
+			
+			modifier = {
+				stability_factor = 0.05
+				fascism_acceptance = 30
+			}
+		}
+		christian_x = {
+			allowed = {
+				NOT = { 
+					has_government = communism
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = christian_x
+
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		duchess_charlotte = {
+			allowed = {
+				NOT = { 
+					has_government = communism
+					has_government = fascism
+				}
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = duchess_charlotte
+
+			
+			modifier = {
+				stability_factor = 0.15
+				industrial_capacity_factory = 0.05
+			}
+		}
+	}
+}

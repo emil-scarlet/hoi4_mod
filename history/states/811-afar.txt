@@ -1,0 +1,26 @@
+state=
+{
+	id=811
+	name="STATE_811"
+	manpower = 103975
+	
+	state_category = wasteland
+
+	history=
+	{
+		owner = ETH
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = ETH
+
+		1936.6.1 = {
+			owner = ITA
+			controller = ITA
+		}
+	}
+
+	provinces=
+	{
+5041}
+}

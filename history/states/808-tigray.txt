@@ -1,0 +1,30 @@
+state=
+{
+	id=808
+	name="STATE_808"
+	manpower = 1654292
+	
+	state_category = town
+
+	history=
+	{
+		owner = ETH
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		victory_points = { 
+			1984 1.0 
+		}
+		add_core_of = ETH
+
+		1936.6.1 = {
+			owner = ITA
+			controller = ITA
+		}
+	}
+
+	provinces=
+	{
+1984 2072 7944	}
+}

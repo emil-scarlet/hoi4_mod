@@ -1,0 +1,195 @@
+spriteTypes = {	
+
+
+
+	SpriteType = {
+		name = "GFX_idea_traits_strip"
+		texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
+		noOfFrames = 15		
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_desta_damtew"
+		texturefile = "gfx/leaders/ETH/Portrait_Ethiopia_Desta_Damtew.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_nasibu_zeamanuel"
+		texturefile = "gfx/leaders/ETH/Portrait_Ethiopia_Nasibu_Zeamanuel.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gustav_v"
+		texturefile = "gfx/interface/ideas/kings/idea_gustav_v.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_haakon_vii"
+		texturefile = "gfx/interface/ideas/kings/idea_haakon_vii.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_leopold_iii"
+		texturefile = "gfx/interface/ideas/kings/idea_leopold_iii.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_christian_x"
+		texturefile = "gfx/interface/ideas/kings/idea_christian_x.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_duchess_charlotte"
+		texturefile = "gfx/interface/ideas/kings/idea_duchess_charlotte.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_massawa_naval_yard"
+		texturefile = "gfx/interface/ideas/ETH/massawa_naval_yard.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_addis_ababa_aircraft"
+		texturefile = "gfx/interface/ideas/ETH/addis_ababa_aircraft.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_addis_ababa_arsenal"
+		texturefile = "gfx/interface/ideas/ETH/addis_ababa_arsenal.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ethiopian_electric_power"
+		texturefile = "gfx/interface/ideas/ETH/ethiopian_electric_power.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ethiopia_railway_company"
+		texturefile = "gfx/interface/ideas/ETH/ethiopia_railway_company.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_university_college_addis_ababa"
+		texturefile = "gfx/interface/ideas/ETH/university_college_addis_ababa.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_eth_state_artillery_factory"
+		texturefile = "gfx/interface/ideas/ETH/eth_state_artillery_factory.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_iskender_desta"
+		texturefile = "gfx/interface/ideas/ETH/idea_iskender_desta.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_mulugeta_yeggazu"
+		texturefile = "gfx/interface/ideas/ETH/idea_mulugeta_yeggazu.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_mishka_babichev"
+		texturefile = "gfx/interface/ideas/ETH/idea_mishka_babichev.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_john_robinson"
+		texturefile = "gfx/interface/ideas/ETH/idea_john_robinson.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_wehib_pasha"
+		texturefile = "gfx/interface/ideas/ETH/idea_wehib_pasha.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_mulugeta_buli"
+		texturefile = "gfx/interface/ideas/ETH/idea_mulugeta_buli.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_orlando_lorenzini"
+		texturefile = "gfx/interface/ideas/ETH/idea_orlando_lorenzini.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_getachew_abate"
+		texturefile = "gfx/interface/ideas/ETH/idea_getachew_abate.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_hubert_julian"
+		texturefile = "gfx/interface/ideas/ETH/idea_hubert_julian.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gustavo_pesenti"
+		texturefile = "gfx/interface/ideas/ETH/idea_gustavo_pesenti.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_beyene_merid"
+		texturefile = "gfx/interface/ideas/ETH/idea_beyene_merid.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_desta_damtew"
+		texturefile = "gfx/interface/ideas/ETH/idea_desta_damtew.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_gugliermo_nasi"
+		texturefile = "gfx/interface/ideas/ETH/idea_gugliermo_nasi.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_kassa_haile"
+		texturefile = "gfx/interface/ideas/ETH/idea_kassa_haile.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_amedeo_di_aosta"
+		texturefile = "gfx/interface/ideas/ETH/idea_amedeo_di_aosta.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_norwegian_navy_chiefs"
+		texturefile = "gfx/interface/ideas/ETH/idea_norwegian_navy_chiefs.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_abebe_aregai"
+		texturefile = "gfx/interface/ideas/ETH/idea_abebe_aregai.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_tekle_hawariate"
+		texturefile = "gfx/interface/ideas/ETH/idea_tekle_hawariate.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_makonnen_habte_wold"
+		texturefile = "gfx/interface/ideas/ETH/idea_makonnen_habte_wold.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_aman_andom"
+		texturefile = "gfx/interface/ideas/ETH/idea_aman_andom.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_mario_bonetti"
+		texturefile = "gfx/interface/ideas/ETH/idea_mario_bonetti.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_hailu_tekle_haymanot"
+		texturefile = "gfx/interface/ideas/ETH/idea_hailu_tekle_haymanot.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_derg_council"
+		texturefile = "gfx/interface/ideas/ETH/idea_derg_council.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ayalew_birru"
+		texturefile = "gfx/interface/ideas/ETH/idea_ayalew_birru.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_makonnen_endelkachew"
+		texturefile = "gfx/interface/ideas/ETH/idea_makonnen_endelkachew.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_heruy_wolde"
+		texturefile = "gfx/interface/ideas/ETH/idea_heruy_wolde.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_haile_selassie_gugsa"
+		texturefile = "gfx/interface/ideas/ETH/idea_haile_selassie_gugsa.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_lorenzo_taezaz"
+		texturefile = "gfx/interface/ideas/ETH/idea_lorenzo_taezaz.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_araya_abebe"
+		texturefile = "gfx/interface/ideas/ETH/idea_araya_abebe.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_eth_kingdom_of_judah"
+		texturefile = "gfx/interface/ideas/ETH/idea_eth_kingdom_of_judah.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_cat_picture_eth_lords"
+		texturefile = "gfx/interface/decisions/decision_eth_lords.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_abuna_basilios"
+		texturefile = "gfx/interface/ideas/ETH/idea_abuna_basilios.dds"
+	}
+}

@@ -1,0 +1,24 @@
+ETH_independently_lords = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_conscription_exemptions_granted
+	
+	recruitable_population_factor = -0.25
+	local_building_slots_factor = -0.2
+	state_resources_factor = -0.2
+	state_production_speed_buildings_factor = -0.15
+}
+ETH_muslims_opposition_high = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_tur_traditionalist_insurgency
+	
+	
+}
+ETH_muslims_opposition_low = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_tur_traditionalist_sedition
+	
+	
+}

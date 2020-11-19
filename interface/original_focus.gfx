@@ -1,0 +1,62 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_focus_ETH_form_blacklions"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_form_blacklions.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_railway"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_railway.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_plea_to_league_of_nations"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_plea_to_league_of_nations.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_ethiopian_flag"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_ethiopian_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_solomon_kingdom"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_solomon_kingdom.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_african_union"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_african_union.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_talaki_dili"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_talaki_dili.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_attack_egypt"
+		texturefile = "gfx/interface/goals/ETH/focus_attack_egypt.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_attack_saudis"
+		texturefile = "gfx/interface/goals/ETH/focus_attack_saudis.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_attack_yemen"
+		texturefile = "gfx/interface/goals/ETH/focus_attack_yemen.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_demand_palestine"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_demand_palestine.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_africa_communism"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_africa_communism.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_african_united_state"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_african_united_state.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_clush_slavery"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_clush_slavery.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ETH_rule_the_african_air"
+		texturefile = "gfx/interface/goals/ETH/focus_ETH_rule_the_african_air.dds"
+	}
+}

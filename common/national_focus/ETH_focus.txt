@@ -1,0 +1,2813 @@
+focus_tree = {
+	id = ETH_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ETH
+		}
+	}
+	continuous_focus_position = { x = 2250 y = 1000 }
+	default = no
+	focus = {
+		id = ETH_effort_construction
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5.00
+		x = 0
+		y = 0
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_form_the_black_lions
+		icon = GFX_focus_ETH_form_blacklions
+		cost = 1.00
+		x = 4
+		y = 0
+		available = {
+			OR = {
+				has_war_with = ITA
+				is_subject_of = ITA
+			}
+		}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			if = {
+				limit = {
+					has_war_with = ITA
+				}
+				add_ideas = { ETH_black_lions_1 }
+			}
+			else_if = {
+				limit = {
+					is_subject_of = ITA
+				}
+				add_ideas = { ETH_black_lions_2 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR  FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = ETH_christmas_offensive
+		icon = GFX_focus_generic_air_defense
+		cost = 1.00
+		x = 10
+		y = 0
+		available = {
+				has_war_with = ITA
+			}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			add_timed_idea = {
+				idea = ETH_christmas_offensive
+				days = 60
+			}
+		}
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR }
+
+	}
+	focus = {
+		id = ETH_emergency_conscription
+		icon = GFX_focus_generic_manpower
+		cost = 1.00
+		x = 12
+		y = 0
+		available = {
+			has_war_with = ITA
+		}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		completion_reward = {
+		custom_effect_tooltip = ETH_emergency_conscription_tt
+		hidden_effect = {
+			division_template = {
+				name = "Local Militias"
+				priority = 0
+				division_names_group = ETH_INF_01
+				regiments = {
+					infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						ROOT = {
+							has_full_control_of_state = PREV
+						}
+					}
+					prioritize = { 271 }
+					create_unit = {
+						division = "name = \"Affar Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+					create_unit = {
+						division = "name = \"Harar Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+					create_unit = {
+						division = "name = \"Gojjam Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+					create_unit = {
+						division = "name = \"Jijiga Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+					create_unit = {
+						division = "name = \"Gondar Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+					create_unit = {
+						division = "name = \"Shewa Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+					create_unit = {
+						division = "name = \"Werega Militia\" division_template = \"Local Militias\" start_experience_factor = 0.1"
+						owner = ETH
+					}
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+	}
+	focus = {
+		id = ETH_advance_to_red_sea
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 6.00
+		x = 23
+		y = 0
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			controls_state = 550
+		}
+		continue_if_invalid = no
+		completion_reward = {
+			550 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Haile Selassie"
+						ruling_only = yes
+					}
+				}
+				create_navy_leader = {
+					name = "Haile Selassie"
+					picture = "Portrait_Ethiopia_Haile_Selassie_navy.dds"
+					traits = { media_personality career_officer gentlemanly  }
+					skill = 3
+				}
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = ETH_massawa_naval_yard
+		}
+
+	}
+	focus = {
+		id = ETH_effort_aviation
+		icon = GFX_goal_generic_build_airforce
+		cost = 6.00
+		x = 32
+		y = 0
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = ETH_effort_aviation
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = ETH_addis_ababa_aircraft
+		}
+
+	}
+	focus = {
+		id = ETH_africa_orientale_italiana
+		icon = GFX_goal_support_fascism
+		cost = 8.00
+		x = 32
+		y = 9
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_global_flag = ETH_finished_eth_war
+			is_subject_of = ITA
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		cancel_if_invalid = no
+		completion_reward = {
+			set_party_name = { 
+				ideology = fascism 
+				long_name = ETH_fascism_party_AOI_long 
+				name = ETH_fascism_party_AOI
+			}
+			add_political_power = 100
+		}
+
+	}
+	focus = {
+		id = ETH_ironworks
+		icon = GFX_focus_generic_steel
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_effort_construction
+		}
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 60
+		}
+		available = {
+			controls_state = 271
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			271 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_industrial_modernization
+		icon = GFX_goal_generic_production
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_ironworks
+		}
+		x = 0
+		y = 2
+		ai_will_do = {
+			factor = 12
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH  FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ETH_industrial_modernization
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ETH_ethiopian_electric_power
+		}
+
+	}
+	focus = {
+		id = ETH_development_addis_abeba
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_industrial_modernization
+		}
+		x = 0
+		y = 3
+		ai_will_do = {
+			factor = 60
+		}
+		available = {
+			controls_state = 271
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		completion_reward = {
+			271 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ETH_lorenzo_taezaz
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_establish_the_addis_abeba_university
+		icon = GFX_focus_research
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_development_addis_abeba
+		}
+		x = 0
+		y = 4
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ETH_university_college_addis_ababa
+		}
+
+	}
+	focus = {
+		id = ETH_finish_modernization
+		icon = GFX_focus_generic_industry_3
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_establish_the_addis_abeba_university
+		}
+		x = 0
+		y = 5
+		available = {
+			num_of_factories > 24
+		}
+		bypass = {
+			NOT = {
+				has_idea = ETH_non_modernized_country
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			remove_ideas = ETH_non_modernized_country
+		}
+
+	}
+	focus = {
+		id = ETH_ethiopian_institute_of_Agricultural_research
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_finish_modernization
+		}
+		x = 0
+		y = 6
+		available = {
+			num_of_factories > 64
+			amount_research_slots < 5
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = ETH_civilian_factories
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_effort_construction
+		}
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_military_reform
+		icon = GFX_focus_generic_military_mission
+		cost = 3.00
+		prerequisite = {
+			focus = ETH_form_the_black_lions
+		}
+		x = 4
+		y = 1
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 2.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ETH_equipment_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_ironworks
+		}
+		prerequisite = {
+			focus = ETH_military_reform
+		}
+		x = 2
+		y = 2
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_military_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_equipment_factories
+		}
+		x = 2
+		y = 3
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_ethio_djibouti_railways
+		icon = GFX_focus_ETH_railway
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_establish_the_addis_abeba_university
+		}
+		x = 2
+		y = 5
+		available = {
+			controls_state = 271
+			controls_state = 807
+			268 = {
+				CONTROLLER = {
+					OR = {
+						original_tag = FRA
+						is_subject_of = FRA
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = no
+		complete_tooltip = {
+			every_state = {
+				limit = {
+					has_state_flag = ETH_djibouti_railway_2IN
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		completion_reward = {
+			271 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ETH_djibouti_railway_2IN
+			}
+			807 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ETH_djibouti_railway_2IN
+			}
+			268 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ETH_djibouti_railway_2IN
+			}
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ETH_ethiopia_railway_company
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	}
+	focus = {
+		id = ETH_military_officer_education
+		icon = GFX_focus_generic_military_academy
+		cost = 6.00
+		prerequisite = {
+			focus = ETH_military_reform
+		}
+		x = 4
+		y = 2
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			OR = {
+				is_subject_of = ITA
+				has_country_flag = ETH_loyals_banished
+			}
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			army_experience = 20
+			custom_effect_tooltip = ETH_military_officer_education_tt
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Nasibu Zeamanuel"
+					gfx = "GFX_portrait_nasibu_zeamanuel"
+					traits = { career_officer }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 4
+					planning_skill = 2
+					logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "Desta Damtew"
+					gfx = "GFX_portrait_desta_damtew"
+					traits = {
+					}
+					skill = 2
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 3
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = ETH_found_the_harar_military_academy
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_military_officer_education
+		}
+		x = 4
+		y = 3
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ETH_harar_military_academy
+		}
+
+	}
+	focus = {
+		id = ETH_strategy_and_tactics
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_found_the_harar_military_academy
+		}
+		x = 4
+		y = 4
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ETH_national_mobilization
+		icon = GFX_focus_generic_little_entente
+		cost = 3.00
+		prerequisite = {
+			focus = ETH_emergency_conscription
+		}
+		prerequisite = {
+			focus = ETH_christmas_offensive
+		}
+		x = 11
+		y = 1
+		ai_will_do = {
+			factor = 2
+		}
+		available = {
+			has_war_with = ITA
+		}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT  FOCUS_FILTER_SECOND_ETHIOPIAN_WAR }
+		completion_reward = {
+			if = {
+				limit = {
+					has_war_support < 0.5
+				}
+				add_war_support = 0.1
+			}
+			else_if = {
+				limit = {
+					has_idea = war_economy
+				}
+				add_political_power = 150
+			}
+			else = {
+				add_ideas = war_economy
+			}
+		}
+
+	}
+	focus = {
+		id = ETH_weapon_update
+		icon = GFX_focus_RAJ_indian_gurkhas
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_military_reform
+		}
+		prerequisite = {
+			focus = ETH_national_mobilization
+		}
+		x = 6
+		y = 2
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapon_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = ETH_addis_ababa_arsenal
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = ETH_eth_state_artillery_factory
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+	}
+	focus = {
+		id = ETH_plea_to_league_of_nations
+		icon = GFX_focus_ETH_plea_to_league_of_nations
+		cost = 3.00
+		prerequisite = {
+			focus = ETH_national_mobilization
+		}
+		x = 8
+		y = 2
+		available = {
+			has_war_with = ITA
+		}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			unlock_decision_category_tooltip = ETH_plea_to_league_of_nations
+			custom_effect_tooltip = ETH_plea_to_league_of_nations_tt
+		}
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR  FOCUS_FILTER_STABILITY }
+
+	}
+	focus = {
+		id = ETH_red_cross
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_plea_to_league_of_nations
+		}
+		x = 8
+		y = 3
+		available = {
+			has_war_with = ITA
+		}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			add_ideas = { ETH_redcross }
+		}
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR }
+
+	}
+	focus = {
+		id = ETH_offense_is_the_best_defence
+		icon = GFX_focus_generic_coastal_fort
+		cost = 3.00
+		prerequisite = {
+			focus = ETH_national_mobilization
+		}
+		x = 11
+		y = 3
+		available = {
+			has_war_with = ITA
+		}
+		bypass = {
+			has_global_flag = ETH_finished_eth_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		completion_reward = {
+			add_ideas = { ETH_offensive_operation }
+		}
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR }
+
+	}
+	focus = {
+		id = ETH_coup_de_grace
+		icon = GFX_focus_attack_italy
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_red_cross
+		}
+		prerequisite = {
+			focus = ETH_offense_is_the_best_defence
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		x = 8
+		y = 4
+		available = {
+			has_war_with = ITA
+			OR = {
+				controls_state = 550
+				controls_state = 559
+			}
+		}
+		bypass = {
+			if = {
+				NOT = {
+					has_war_with = ITA
+				}
+			}
+		}
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR  FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.1
+			add_timed_idea = {
+				idea = ETH_idea_coup_de_grace
+				days = 100
+			}
+		}
+
+	}
+	focus = {
+		id = ETH_peace_treaty_with_italy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_coup_de_grace
+		}
+		x = 8
+		y = 5
+		available = {
+			has_war_with = ITA
+			has_full_control_of_state = 550
+			has_full_control_of_state = 559
+			has_full_control_of_state = 812
+			has_full_control_of_state = 813
+		}
+		bypass = {
+			NOT = {
+				has_war_with = ITA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_SECOND_ETHIOPIAN_WAR }
+		completion_reward = {
+			add_ideas = { ETH_war_exhaustion_5 }
+			remove_ideas = { ETH_offensive_operation }
+			remove_ideas = { ETH_redcross }
+			remove_ideas = { ETH_idea_coup_de_grace }
+			country_event = Ethiopia_politics.1
+			set_global_flag = ETH_finished_eth_war
+		}
+
+	}
+	focus = {
+		id = ETH_integrate_supplies
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_offense_is_the_best_defence
+		}
+		x = 11
+		y = 4
+		available = {
+			has_political_power > 99
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = yes
+		completion_reward = {
+			custom_effect_tooltip = ETH_integrate_supplies_tt
+			hidden_effect = {
+				add_political_power = -100
+			}
+			swap_ideas = {
+				remove_idea = ETH_feudal_army
+				add_idea = ETH_feudal_army_2
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = ETH_talaki_dili
+		icon = GFX_focus_ETH_talaki_dili
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_peace_treaty_with_italy
+		}
+		x = 14
+		y = 6
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		has_global_flag = ETH_finished_eth_war
+		has_full_control_of_state = 550
+		has_full_control_of_state = 559
+		has_full_control_of_state = 812
+		has_full_control_of_state = 813
+		}
+		continue_if_invalid = no
+		completion_reward = {
+			add_stability = 0.1
+			if = {
+				limit = {
+					550 = {
+						owner = {
+							NOT = {
+								tag = ITA
+								tag = ERI
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 550
+			}
+			if = {
+				limit = {
+					559 = {
+						owner = {
+							NOT = {
+								tag = ITA
+								tag = SOM
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 559
+			}
+			if = {
+				limit = {
+					812 = {
+						owner = {
+							NOT = {
+								tag = ITA
+								tag = SOM
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 812
+			}
+			if = {
+				limit = {
+					813 = {
+						owner = {
+							NOT = {
+								tag = ITA
+								tag = SOM
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 813
+			}
+			if = {
+				limit = {
+					has_idea = civilian_economy
+				}
+			add_political_power = 150
+			}
+			else = {
+					add_ideas = civilian_economy
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL  FOCUS_FILTER_STABILITY }
+
+	}
+	focus = {
+		id = ETH_japanese_support
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_talaki_dili
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = ETH_soviet_aid
+			focus = ETH_german_assistance
+			focus = ETH_british_cooperation
+		}
+		x = 11
+		y = 7
+		available = {
+			country_exists = JAP
+			JAP = {
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+		}
+		continue_if_invalid = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_category_tooltip = ETH_recovery_from_war
+			custom_effect_tooltip = ETH_recovery_from_war_tt
+			add_opinion_modifier = {
+				target = JAP
+				modifier = ethiopia_japan_diplomacy
+			}
+			JAP = {
+				add_opinion_modifier = {
+					target = ETH
+					modifier = ethiopia_japan_diplomacy
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = ETH_soviet_aid
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_talaki_dili
+		}
+		mutually_exclusive = {
+			focus = ETH_japanese_support
+			focus = ETH_german_assistance
+			focus = ETH_british_cooperation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		x = 5
+		y = 7
+		available = {
+			country_exists = SOV
+			SOV = {
+				has_government = communism
+				has_completed_focus = SOV_finish_five_year_plan
+			}
+		}
+		continue_if_invalid = no
+		completion_reward = {
+			unlock_decision_category_tooltip = ETH_recovery_from_war
+			custom_effect_tooltip = ETH_recovery_from_war_tt
+			add_timed_idea = {
+				idea = ETH_communism_influence
+				days = 1095
+			}
+			add_opinion_modifier = {
+				target = SOV
+				modifier = ethiopia_soviet_diplomacy
+			}
+			SOV = {
+				add_opinion_modifier = {
+					target = ETH
+					modifier = ethiopia_soviet_diplomacy
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+	}
+	focus = {
+		id = ETH_royal_wedding
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_japanese_support
+		}
+		x = 11
+		y = 8
+		available = {
+			country_exists = JAP
+			JAP = {
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+		}
+		bypass = {
+			NOT = { country_exists = JAP }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = no
+		completion_reward = {
+			add_stability = 0.1
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ETH_araya_abebe
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+
+	}
+	focus = {
+		id = ETH_kingdom_of_judah
+		icon = GFX_focus_ETH_ethiopian_flag
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_royal_wedding
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = neutrality
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		completion_reward = {
+			add_ideas = ETH_kingdom_of_judah_focus
+			unlock_decision_category_tooltip = ETH_lords_be_treat
+		}
+		search_filters = {　 }
+		x = 11
+		y = 11
+
+	}
+	focus = {
+		id = ETH_imperial_research_institute
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_kingdom_of_judah
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		x = 9
+		y = 12
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = ETH_anti_colonial_dogma
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 6.00
+		prerequisite = {
+			focus = ETH_kingdom_of_judah
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			all_owned_state = {
+				is_core_of = ETH
+			}
+		}
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			add_political_power = 120
+			add_opinion_modifier = {
+				target = ENG
+				modifier = ETH_anticolonial_dogma
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ETH_anticolonial_dogma
+			}
+			add_opinion_modifier = {
+				target = ITA
+				modifier = ETH_anticolonial_dogma
+			}
+			add_opinion_modifier = {
+				target = BEL
+				modifier = ETH_anticolonial_dogma
+			}
+			add_opinion_modifier = {
+				target = SPR
+				modifier = ETH_anticolonial_dogma
+			}
+			add_opinion_modifier = {
+				target = POR
+				modifier = ETH_anticolonial_dogma
+			}
+		}
+		x = 11
+		y = 12
+
+	}
+	focus = {
+		id = ETH_reclaim_the_kingdom_of_aksum
+		icon = GFX_goal_demand_sudetenland
+		cost = 5.00
+		ai_will_do = {
+			factor = 1
+		}
+		prerequisite = {
+			focus = ETH_anti_colonial_dogma
+		}
+		x = 10
+		y = 13
+		completion_reward = {
+			551 = {
+				add_claim_by = ETH
+				add_core_of = ETH
+			}
+			549 = {
+				add_claim_by = ETH
+				add_core_of = ETH
+			}
+			767 = {
+				add_claim_by = ETH
+				add_core_of = ETH
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+	focus = {
+		id = ETH_demand_french_somaliland
+		icon = GFX_goal_generic_position_armies
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_reclaim_the_kingdom_of_aksum
+		}
+		completion_reward = {
+			268 = {
+				add_claim_by = ETH
+				add_core_of = ETH
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		x = 8
+		y = 14
+
+	}
+	focus = {
+		id = ETH_strengthen_ethiopian_orthodox_tewahedo_church
+		icon = GFX_focus_por_concordat
+		cost = 6.00
+		prerequisite = {
+			focus = ETH_anti_colonial_dogma
+		}
+		available = {
+			has_government = neutrality
+		}
+		ai_will_do = { factor = 1 }
+		continue_if_invalid = no
+		completion_reward = {
+			add_ideas = ETH_ethiopian_orthodox_church
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ETH_abuna_basilios
+		}
+		x = 12
+		y = 13
+
+	}
+	focus = {
+		id = ETH_islamic_problem
+		icon = GFX_focus_TUR_turanist_ambition
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_strengthen_ethiopian_orthodox_tewahedo_church
+		}
+		ai_will_do = { factor = 1 }
+		x = 12
+		y = 14
+		completion_reward = {
+			add_stability = 0.1
+			add_opinion_modifier = {
+				target = SAU
+				modifier = ETH_suppress_muslims
+			}
+			add_opinion_modifier = {
+				target = YEM
+				modifier = ETH_suppress_muslims
+			}
+			add_opinion_modifier = {
+				target = IRQ
+				modifier = ETH_suppress_muslims
+			}
+			add_opinion_modifier = {
+				target = OMA
+				modifier = ETH_suppress_muslims
+			}
+			add_opinion_modifier = {
+				target = PER
+				modifier = ETH_suppress_muslims
+			}
+			add_opinion_modifier = {
+				target = AFG
+				modifier = ETH_suppress_muslims
+			}
+			if = {
+				limit = {
+					TUR = {
+						OR = {
+							has_country_leader = {
+								name = "Adnan Menderes"
+								ruling_only = yes
+							}
+							has_country_leader = {
+								name = "Halife Abdülmecid Efendi"
+								ruling_only = yes
+							}
+							has_country_leader = {
+								name = "Refet Pasha"
+								ruling_only = yes
+							}
+							has_country_leader = {
+								name = "Dürrüşehvar I"
+								ruling_only = yes
+							}
+							has_country_leader = {
+								name = "Mehmet Esat Paşa"
+								ruling_only = yes
+							}
+							has_country_leader = {
+								name = "Abdulmejid II"
+								ruling_only = yes
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					target = TUR
+					modifier = ETH_suppress_muslims
+				}
+			}
+			hidden_effect = {
+				SAU = {
+					add_opinion_modifier = {
+						target = ETH
+						modifier = ETH_suppress_muslims
+					}
+				}
+				YEM = {
+					add_opinion_modifier = {
+						target = ETH
+						modifier = ETH_suppress_muslims
+					}
+				}
+				IRQ = {
+					add_opinion_modifier = {
+						target = ETH
+						modifier = ETH_suppress_muslims
+					}
+				}
+				OMA = {
+					add_opinion_modifier = {
+						target = ETH
+						modifier = ETH_suppress_muslims
+					}
+				}
+				PER = {
+					add_opinion_modifier = {
+						target = ETH
+						modifier = ETH_suppress_muslims
+					}
+				}
+				AFG = {
+					add_opinion_modifier = {
+						target = ETH
+						modifier = ETH_suppress_muslims
+					}
+				}
+				if = {
+					limit = {
+						TUR = {
+							OR = {
+								has_country_leader = {
+									name = "Adnan Menderes"
+									ruling_only = yes
+								}
+								has_country_leader = {
+									name = "Halife Abdülmecid Efendi"
+									ruling_only = yes
+								}
+								has_country_leader = {
+									name = "Refet Pasha"
+									ruling_only = yes
+								}
+								has_country_leader = {
+									name = "Dürrüşehvar I"
+									ruling_only = yes
+								}
+								has_country_leader = {
+									name = "Mehmet Esat Paşa"
+									ruling_only = yes
+								}
+								has_country_leader = {
+									name = "Abdulmejid II"
+									ruling_only = yes
+								}
+							}
+						}
+					}
+					TUR = {
+						add_opinion_modifier = {
+							target = ETH
+							modifier = ETH_suppress_muslims
+						}
+					}
+				}
+				550 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_low }
+				}
+				559 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_high }
+				}
+				807 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_high }
+				}
+				809 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_low }
+				}
+				811 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_high }
+				}
+				812 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_low }
+				}
+				813 = {
+					add_dynamic_modifier = { modifier = ETH_muslims_opposition_low }
+				}
+			}
+			custom_effect_tooltip = ETH_islamic_problem_tt
+		}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+	}
+	focus = {
+		id = ETH_bridgehead_for_the_arabian_peninsula
+		icon = GFX_focus_attack_yemen
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_islamic_problem
+		}
+		x = 12
+		y = 15
+		available = {
+			293 = {
+				CONTROLLER = {
+					OR = {
+						NOT = {
+							tag = ETH
+						}
+						NOT = {
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+			}
+		}
+		bypass =  {
+			293 = {
+				CONTROLLER = {
+					OR = {
+						tag = ETH
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		continue_if_invalid = no
+		available_if_capitulated = no
+		completion_reward = {
+			293 = {
+				add_claim_by = ETH
+				add_core_of = ETH
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YEM
+			}
+			add_tech_bonus = {
+				name = ETH_bridgehead_for_the_arabian_peninsula
+				bonus = 1.0
+				uses = 1
+				category = tp_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+	focus = {
+		id = ETH_first_strike_on_the_enemy
+		icon = GFX_focus_attack_saudis
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_bridgehead_for_the_arabian_peninsula
+		}
+		available = {
+			SAU = {
+				exists = yes
+			}
+		}
+		bypass = {
+			SAU = {
+				exists = no
+			}
+		}
+		continue_if_invalid = no
+		completion_reward = {
+			679 = {
+				add_claim_by = ETH
+				add_core_of = ETH
+			}
+			add_state_claim = 292
+			add_state_claim = 678
+			create_wargoal = {
+				type = annex_everything
+				target = SAU
+			}
+		}
+		x = 12
+		y = 16
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+	focus = {
+		id = ETH_strengthen_kebur_zabagna
+		icon = GFX_focus_generic_little_entente
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_kingdom_of_judah
+		}
+		available = {
+			has_template = "Kebur Zabagna"
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		completion_reward = {
+			army_experience = 30
+			add_tech_bonus = {
+				name = ETH_strengthen_kebur_zabagna
+				bonus = 1.5
+				uses = 1
+				category = land_doctrine
+			}
+			random_army_leader = {
+				limit = {
+					has_id = 5615
+				}
+				add_unit_leader_trait = skilled_staffer
+				add_skill_level = 2
+			}
+		}
+		x = 13
+		y = 12
+
+	}
+	focus = {
+		id = ETH_defence_homeland
+		icon = GFX_focus_generic_home_defense
+		cost = 2.00
+		prerequisite = {
+			focus = ETH_national_mobilization
+		}
+		x = 14
+		y = 2
+		
+	}
+	focus = {
+		id = ETH_defence_the_capital
+		icon = GFX_goal_generic_fortify_city
+		cost = 4.00
+		prerequisite = {
+			focus = ETH_defence_homeland
+		}
+		x = 14
+		y = 3
+
+	}
+	focus = {
+		id = ETH_fortification
+		icon = GFX_goal_generic_construct_military
+		cost = 4.00
+		prerequisite = {
+			focus = ETH_defence_the_capital
+		}
+		x = 14
+		y = 4
+
+	}
+	focus = {
+		id = ETH_training_in_mountain
+		icon = GFX_focus_GRE_a_land_of_mountains
+		cost = 4.00
+		prerequisite = {
+			focus = ETH_defence_homeland
+		}
+		x = 16
+		y = 3
+
+	}
+	focus = {
+		id = ETH_frontline_defence
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 4.00
+		prerequisite = {
+			focus = ETH_training_in_mountain
+		}
+		x = 16
+		y = 4
+
+	}
+	focus = {
+		id = ETH_german_assistance
+		icon = GFX_focus_chi_mission_to_germany
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_talaki_dili
+		}
+		mutually_exclusive = {
+			focus = ETH_japanese_support
+			focus = ETH_soviet_aid
+			focus = ETH_british_cooperation
+		}
+		x = 17
+		y = 7
+
+	}
+	focus = {
+		id = ETH_german_weapons
+		icon = GFX_goal_generic_army_artillery
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_german_assistance
+		}
+		x = 17
+		y = 8
+
+	}
+	focus = {
+		id = ETH_resume_the_parliament
+		icon = GFX_focus_generic_self_management
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_royal_wedding
+			focus = ETH_german_weapons
+		}
+		x = 14
+		y = 9
+
+	}
+	focus = {
+		id = ETH_african_spokesman
+		icon = GFX_goal_generic_propaganda
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_royal_wedding
+			focus = ETH_german_weapons
+		}
+		x = 17
+		y = 10
+
+	}
+	focus = {
+		id = ETH_deification_the_emperor
+		icon = GFX_goal_generic_attack_allies
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_african_spokesman
+		}
+		x = 17
+		y = 11
+
+	}
+	focus = {
+		id = ETH_award_heroes
+		icon = GFX_focus_generic_military_mission
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_deification_the_emperor
+		}
+		x = 16
+		y = 12
+
+	}
+	focus = {
+		id = ETH_training_the_kebur_zabagna
+		icon = GFX_focus_generic_little_entente
+		cost = 7.00
+		prerequisite = {
+			focus = ETH_deification_the_emperor
+		}
+		x = 18
+		y = 12
+
+	}
+	focus = {
+		id = ETH_strengthen_emperors_authority
+		icon = GFX_focus_generic_monarchy_1
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_training_the_kebur_zabagna
+		}
+		prerequisite = {
+			focus = ETH_award_heroes
+		}
+		x = 17
+		y = 13
+
+	}
+	focus = {
+		id = ETH_develop_eritrea
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_advance_to_red_sea
+		}
+		x = 20
+		y = 1
+
+	}
+	focus = {
+		id = ETH_assab_port
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_develop_eritrea
+		}
+		x = 20
+		y = 3
+
+	}
+	focus = {
+		id = ETH_british_cooperation
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_talaki_dili
+		}
+		mutually_exclusive = {
+			focus = ETH_japanese_support
+			focus = ETH_soviet_aid
+			focus = ETH_german_assistance
+		}
+		x = 21
+		y = 7
+
+	}
+	focus = {
+		id = ETH_adopt_the_constitutional_monarchy
+		icon = GFX_focus_generic_treaty
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_british_cooperation
+		}
+		x = 21
+		y = 10
+
+	}
+	focus = {
+		id = ETH_suppress_the_emperors_authority
+		icon = GFX_focus_rom_handle_king
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_adopt_the_constitutional_monarchy
+		}
+		x = 21
+		y = 11
+
+	}
+	focus = {
+		id = ETH_revise_the_constitution
+		icon = GFX_goal_support_democracy
+		cost = 7.00
+		prerequisite = {
+			focus = ETH_suppress_the_emperors_authority
+		}
+		x = 21
+		y = 12
+
+	}
+	focus = {
+		id = ETH_american_africans_network
+		icon = GFX_focus_chi_mission_to_the_us
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_revise_the_constitution
+		}
+		x = 21
+		y = 13
+
+	}
+	focus = {
+		id = ETH_foreign_researchers
+		icon = GFX_focus_research2
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_strengthen_emperors_authority
+			focus = ETH_american_africans_network
+		}
+		x = 17
+		y = 14
+
+	}
+	focus = {
+		id = ETH_agreement_with_lords
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_american_africans_network
+			focus = ETH_strengthen_emperors_authority
+		}
+		x = 19
+		y = 14
+
+	}
+	focus = {
+		id = ETH_support_the_rastafari_movement
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_american_africans_network
+		}
+		x = 21
+		y = 14
+
+	}
+	focus = {
+		id = ETH_african_union
+		icon = GFX_focus_ETH_african_union
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_agreement_with_lords
+		}
+		x = 19
+		y = 15
+
+	}
+	focus = {
+		id = ETH_support_to_africans
+		icon = GFX_focus_generic_africa_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_african_union
+		}
+		x = 21
+		y = 16
+
+	}
+	focus = {
+		id = ETH_negotiation_with_europeans
+		icon = GFX_focus_usa_focus_on_europe
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_african_union
+		}
+		x = 17
+		y = 16
+
+	}
+	focus = {
+		id = ETH_independence_in_east_africa
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_negotiation_with_europeans
+		}
+		prerequisite = {
+			focus = ETH_support_to_africans
+		}
+		x = 21
+		y = 17
+
+	}
+	focus = {
+		id = ETH_independence_in_north_africa
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_negotiation_with_europeans
+		}
+		prerequisite = {
+			focus = ETH_support_to_africans
+		}
+		x = 15
+		y = 17
+
+	}
+	focus = {
+		id = ETH_join_allies
+		icon = GFX_goal_generic_alliance
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_american_africans_network
+		}
+		x = 27
+		y = 14
+
+	}
+	focus = {
+		id = ETH_horn_of_africa_railways
+		icon = GFX_focus_generic_africa_infrastructure
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_join_allies
+		}
+		x = 25
+		y = 15
+
+	}
+	focus = {
+		id = ETH_transfer_horn_of_africa_colonies
+		icon = GFX_goal_tfv_saf_secure_interests_in_africa
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_horn_of_africa_railways
+		}
+		x = 25
+		y = 16
+
+	}
+	focus = {
+		id = ETH_develop_somaria
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_advance_to_red_sea
+		}
+		x = 26
+		y = 1
+
+	}
+	focus = {
+		id = ETH_fortify_mogadishu
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_develop_somaria
+		}
+		x = 26
+		y = 3
+
+	}
+	focus = {
+		id = ETH_form_the_navy
+		icon = GFX_goal_generic_navy_battleship
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_fortify_mogadishu
+			focus = ETH_assab_port
+		}
+		x = 23
+		y = 4
+
+	}
+	focus = {
+		id = ETH_wolfpack
+		icon = GFX_goal_generic_wolf_pack
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_form_the_navy
+		}
+		x = 20
+		y = 6
+
+	}
+	focus = {
+		id = ETH_effort_destroyer
+		icon = GFX_focus_generic_destroyer
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_form_the_navy
+		}
+		x = 22
+		y = 6
+
+	}
+	focus = {
+		id = ETH_battleship_primacy
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_form_the_navy
+		}
+		x = 24
+		y = 6
+
+	}
+	focus = {
+		id = ETH_marines
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_form_the_navy
+		}
+		x = 26
+		y = 6
+
+	}
+	focus = {
+		id = ETH_allies_technologies
+		icon = GFX_focus_research2
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_join_allies
+		}
+		x = 27
+		y = 15
+
+	}
+	focus = {
+		id = ETH_investment_from_allies
+		icon = GFX_goal_generic_consumer_goods
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_allies_technologies
+		}
+		x = 27
+		y = 16
+
+	}
+	focus = {
+		id = ETH_request_to_build_the_ships
+		icon = GFX_focus_generic_destroyer
+		cost = 6.00
+		prerequisite = {
+			focus = ETH_develop_somaria
+		}
+		x = 28
+		y = 2
+
+	}
+	focus = {
+		id = ETH_choose_the_vicere
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_africa_orientale_italiana
+		}
+		x = 32
+		y = 10
+
+	}
+	focus = {
+		id = ETH_construct_the_domestic_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_choose_the_vicere
+		}
+		x = 30
+		y = 11
+
+	}
+	focus = {
+		id = ETH_develop_goldmine
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_construct_the_domestic_railways
+		}
+		x = 30
+		y = 12
+
+	}
+	focus = {
+		id = ETH_italian_Investment_fund
+		icon = GFX_focus_generic_industry_2
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_develop_goldmine
+		}
+		x = 30
+		y = 13
+
+	}
+	focus = {
+		id = ETH_build_the_airport
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_effort_aviation
+		}
+		x = 32
+		y = 1
+
+	}
+	focus = {
+		id = ETH_import_foreign_bombers
+		icon = GFX_goal_generic_air_bomber
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_build_the_airport
+		}
+		x = 31
+		y = 2
+
+	}
+	focus = {
+		id = ETH_naval_bombers
+		icon = GFX_focus_usa_escort_fighters
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_import_foreign_bombers
+		}
+		prerequisite = {
+			focus = ETH_form_the_navy
+		}
+		x = 29
+		y = 5
+
+	}
+	focus = {
+		id = ETH_CAS_focus
+		icon = GFX_goal_generic_CAS
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_import_foreign_bombers
+		}
+		x = 31
+		y = 5
+
+	}
+	focus = {
+		id = ETH_paratroopers
+		icon = GFX_focus_generic_paratrooper
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_build_the_airport
+		}
+		x = 32
+		y = 4
+
+	}
+	focus = {
+		id = ETH_import_foreign_fighters
+		icon = GFX_goal_generic_air_fighter
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_build_the_airport
+		}
+		x = 33
+		y = 2
+
+	}
+	focus = {
+		id = ETH_light_fighters
+		icon = GFX_goal_generic_air_fighter2
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_import_foreign_fighters
+		}
+		mutually_exclusive = {
+			focus = ETH_heavy_fighters
+		}
+		x = 33
+		y = 5
+
+	}
+	focus = {
+		id = ETH_italian_stationed_troops
+		icon = GFX_goal_generic_small_arms
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_choose_the_vicere
+		}
+		x = 34
+		y = 11
+
+	}
+	focus = {
+		id = ETH_east_africa_garrisons
+		icon = GFX_focus_prc_infiltration
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_italian_stationed_troops
+		}
+		x = 34
+		y = 12
+
+	}
+	focus = {
+		id = ETH_defence_against_english
+		icon = GFX_focus_attack_britain
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_east_africa_garrisons
+		}
+		x = 34
+		y = 13
+
+	}
+	focus = {
+		id = ETH_aircraft_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_build_the_airport
+		}
+		x = 35
+		y = 2
+
+	}
+	focus = {
+		id = ETH_heavy_fighters
+		icon = GFX_goal_continuous_air_production
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_import_foreign_fighters
+		}
+		mutually_exclusive = {
+			focus = ETH_light_fighters
+		}
+		x = 35
+		y = 5
+
+	}
+	focus = {
+		id = ETH_rule_the_african_air
+		icon = GFX_focus_ETH_rule_the_african_air
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_light_fighters
+			focus = ETH_heavy_fighters
+			focus = ETH_CAS_focus
+			focus = ETH_naval_bombers
+		}
+		prerequisite = {
+			focus = ETH_paratroopers
+		}
+		x = 32
+		y = 6
+
+	}
+	focus = {
+		id = ETH_establish_the_judicature
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_resume_the_parliament
+		}
+		x = 14
+		y = 10
+
+	}
+	focus = {
+		id = ETH_repeal_the_slavery
+		icon = GFX_focus_ETH_clush_slavery
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_establish_the_judicature
+		}
+		x = 14
+		y = 11
+
+	}
+	focus = {
+		id = ETH_soviet_reconstruction_assistance
+		icon = GFX_goal_generic_soviet_construction
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_soviet_aid
+		}
+		x = 5
+		y = 8
+
+	}
+	focus = {
+		id = ETH_demand_british_somaliland
+		icon = GFX_focus_RAJ_clamp_down_on_corruption
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_reclaim_the_kingdom_of_aksum
+		}
+		x = 10
+		y = 14
+
+	}
+	focus = {
+		id = ETH_port_of_djibouti
+		icon = GFX_goal_generic_build_navy
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_demand_french_somaliland
+		}
+		x = 8
+		y = 15
+
+	}
+	focus = {
+		id = ETH_demand_egypt
+		icon = GFX_focus_attack_egypt
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_demand_british_somaliland
+		}
+		x = 10
+		y = 15
+
+	}
+	focus = {
+		id = ETH_recover_palestine
+		icon = GFX_focus_ETH_demand_palestine
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_demand_egypt
+		}
+		x = 10
+		y = 16
+
+	}
+	focus = {
+		id = ETH_declare_the_solomon_empire
+		icon = GFX_focus_ETH_solomon_kingdom
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_first_strike_on_the_enemy
+		}
+		prerequisite = {
+			focus = ETH_recover_palestine
+		}
+		x = 11
+		y = 17
+
+	}
+	focus = {
+		id = ETH_conservation_of_the_aden_strait
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_bridgehead_for_the_arabian_peninsula
+		}
+		x = 14
+		y = 16
+
+	}
+	focus = {
+		id = ETH_communist_regent
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_soviet_reconstruction_assistance
+		}
+		x = 5
+		y = 9
+
+	}
+	focus = {
+		id = ETH_amend_the_constitution_of_1931
+		icon = GFX_focus_hol_the_foundations_of_defense
+		cost = 7.00
+		prerequisite = {
+			focus = ETH_communist_regent
+		}
+		x = 4
+		y = 10
+
+	}
+	focus = {
+		id = ETH_communist_officer
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 7.00
+		prerequisite = {
+			focus = ETH_communist_regent
+		}
+		x = 6
+		y = 10
+
+	}
+	focus = {
+		id = ETH_equalize_the_people
+		icon = GFX_focus_por_workers_of_iberia
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_agricultural_reform
+		}
+		x = 5
+		y = 14
+
+	}
+	focus = {
+		id = ETH_soviet_research_advisor
+		icon = GFX_focus_generic_socialist_science
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_soviet_reconstruction_assistance
+		}
+		x = 7
+		y = 9
+
+	}
+	focus = {
+		id = ETH_abolition_the_emperor
+		icon = GFX_focus_rom_abdicate
+		cost = 6.00
+		prerequisite = {
+			focus = ETH_amend_the_constitution_of_1931
+		}
+		prerequisite = {
+			focus = ETH_communist_officer
+		}
+		x = 5
+		y = 11
+
+	}
+	focus = {
+		id = ETH_agricultural_reform
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_establish_the_new_government
+		}
+		x = 5
+		y = 13
+
+	}
+	focus = {
+		id = ETH_establish_the_new_government
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_abolition_the_emperor
+		}
+		x = 5
+		y = 12
+
+	}
+	focus = {
+		id = ETH_join_the_comintern
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_establish_the_new_government
+		}
+		mutually_exclusive = {
+			focus = ETH_decolonization_in_africa
+		}
+		x = 4
+		y = 15
+
+	}
+	focus = {
+		id = ETH_decolonization_in_africa
+		icon = GFX_focus_ETH_africa_communism
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_establish_the_new_government
+		}
+		mutually_exclusive = {
+			focus = ETH_join_the_comintern
+		}
+		x = 6
+		y = 15
+
+	}
+	focus = {
+		id = ETH_technology_sharing
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_join_the_comintern
+		}
+		x = 4
+		y = 16
+
+	}
+	focus = {
+		id = ETH_transformation_of_nature
+		icon = GFX_goal_generic_soviet_construction
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_join_the_comintern
+		}
+		x = 2
+		y = 16
+
+	}
+	focus = {
+		id = ETH_ethiopian_red_army
+		icon = GFX_goal_rhineland
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_communist_officer
+		}
+		x = 7
+		y = 12
+
+	}
+	focus = {
+		id = ETH_aluminum_factory
+		icon = GFX_focus_generic_aluminum
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_transformation_of_nature
+		}
+		x = 2
+		y = 17
+
+	}
+	focus = {
+		id = ETH_act_to_independent_countries
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_decolonization_in_africa
+		}
+		x = 6
+		y = 16
+
+	}
+	focus = {
+		id = ETH_liberate_british_colonies
+		icon = GFX_focus_attack_britain
+		cost = 7.00
+		prerequisite = {
+			focus = ETH_act_to_independent_countries
+		}
+		x = 5
+		y = 17
+
+	}
+	focus = {
+		id = ETH_liberate_french_colonies
+		icon = GFX_focus_attack_france
+		cost = 7.00
+		prerequisite = {
+			focus = ETH_act_to_independent_countries
+		}
+		x = 7
+		y = 17
+
+	}
+	focus = {
+		id = ETH_liberate_all_colonies_in_africa
+		icon = GFX_goal_generic_major_war
+		cost = 6.00
+		prerequisite = {
+			focus = ETH_act_to_independent_countries
+		}
+		x = 9
+		y = 17
+
+	}
+	focus = {
+		id = ETH_unity_of_africa
+		icon = GFX_goal_generic_national_unity
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_liberate_french_colonies
+			focus = ETH_liberate_british_colonies
+		}
+		prerequisite = {
+			focus = ETH_liberate_all_colonies_in_africa
+		}
+		x = 7
+		y = 18
+
+	}
+	focus = {
+		id = ETH_independence_in_west_africa
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_negotiation_with_europeans
+		}
+		prerequisite = {
+			focus = ETH_support_to_africans
+		}
+		x = 17
+		y = 17
+
+	}
+	focus = {
+		id = ETH_independence_in_central_africa
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_negotiation_with_europeans
+		}
+		prerequisite = {
+			focus = ETH_support_to_africans
+		}
+		x = 19
+		y = 17
+
+	}
+	focus = {
+		id = ETH_independence_in_southern_africa
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 5.00
+		prerequisite = {
+			focus = ETH_negotiation_with_europeans
+		}
+		prerequisite = {
+			focus = ETH_support_to_africans
+		}
+		x = 23
+		y = 17
+
+	}
+	focus = {
+		id = ETH_united_states_of_africa
+		icon = GFX_focus_ETH_african_united_state
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_independence_in_north_africa
+			focus = ETH_independence_in_west_africa
+			focus = ETH_independence_in_southern_africa
+			focus = ETH_independence_in_central_africa
+			focus = ETH_independence_in_east_africa
+		}
+		mutually_exclusive = {
+			focus = ETH_strengthen_african_union
+		}
+		x = 18
+		y = 18
+
+	}
+	focus = {
+		id = ETH_strengthen_african_union
+		icon = GFX_goal_generic_national_unity
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_independence_in_southern_africa
+			focus = ETH_independence_in_east_africa
+			focus = ETH_independence_in_central_africa
+			focus = ETH_independence_in_west_africa
+			focus = ETH_independence_in_north_africa
+		}
+		mutually_exclusive = {
+			focus = ETH_united_states_of_africa
+		}
+		x = 20
+		y = 18
+
+	}
+	focus = {
+		id = ETH_arrest_the_resistances
+		icon = GFX_goal_generic_military_deal
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_choose_the_vicere
+		}
+		x = 32
+		y = 11
+
+	}
+	focus = {
+		id = ETH_immigrate_from_italy
+		icon = GFX_goal_generic_national_unity
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_arrest_the_resistances
+		}
+		x = 32
+		y = 12
+
+	}
+	focus = {
+		id = ETH_local_production
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_italian_stationed_troops
+		}
+		x = 36
+		y = 12
+
+	}
+	focus = {
+		id = ETH_fascism_education
+		icon = GFX_focus_generic_military_academy
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_immigrate_from_italy
+		}
+		x = 32
+		y = 13
+
+	}
+	focus = {
+		id = ETH_integrate_with_italy
+		icon = GFX_focus_generic_italy_first
+		cost = 10.00
+		prerequisite = {
+			focus = ETH_defence_against_english
+		}
+		prerequisite = {
+			focus = ETH_fascism_education
+		}
+		prerequisite = {
+			focus = ETH_italian_Investment_fund
+		}
+		x = 32
+		y = 14
+
+	}
+	focus = {
+		id = ETH_anti_fascism_war
+		icon = GFX_focus_focus_fra_fascist_threat
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_join_allies
+		}
+		x = 29
+		y = 15
+
+	}
+	focus = {
+		id = ETH_volunteer_army_to_europe
+		icon = GFX_focus_usa_focus_on_europe
+		cost = 8.00
+		prerequisite = {
+			focus = ETH_anti_fascism_war
+		}
+		x = 29
+		y = 16
+
+	}
+}

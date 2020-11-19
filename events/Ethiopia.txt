@@ -1,0 +1,243 @@
+#namespaces
+add_namespace = Ethiopia_general
+add_namespace = Ethiopia_politics
+add_namespace = Ethiopia_news
+add_namespace = Ethiopia_territory
+add_namespace = Ethiopia_modifier
+
+ ######    ########  ##    ##  #######  ##          ###     ##
+##    ##   ##        ###   ##  ##       ##         ## ##    ##
+##         ##        ####  ##  ##       ##        ##   ##   ##
+##  #####  ######    ## ## ##  ######   ##       ##     ##  ##
+##    ##   ##        ##  ####  ##       ##       #########  ##
+##    ##   ##        ##   ###  ##       ##       ##     ##  ##
+ ######    ########  ##    ##  #######  #######  ##     ##  ########
+ 
+country_event = {
+	id = Ethiopia_general.1 #mulugeta dies
+	
+	title = Ethiopia_general.1.t
+	desc = Ethiopia_general.1.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_tur_machine_gunners
+	trigger = {
+		ITA = {
+			controls_state = 808 
+		}
+		has_idea = ETH_mulugeta_yeggazu
+		casualties > 3000
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = Ethiopia_general.1.a
+		ai_chance = { factor = 90 }
+		remove_unit_leader = 5601
+		remove_ideas = { ETH_mulugeta_yeggazu }
+		set_country_flag = ETH_yeggazu_died
+	}
+}
+
+######    #####   ##       ######  ######  ######   #####    #####
+##   ##  ##   ##  ##         ##      ##      ##    ##   ##  ##   ##
+##   ##  ##   ##  ##         ##      ##      ##    ##       ##
+######   ##   ##  ##         ##      ##      ##    ##        #####
+##       ##   ##  ##         ##      ##      ##    ##            ##
+##       ##   ##  ##         ##      ##      ##    ##   ##  ##   ##
+##        #####   #######  ######    ##    ######   #####    #####
+
+country_event = {
+	id = Ethiopia_politics.1 #peace treaty with ITALY
+	
+	title = Ethiopia_politics.1.t
+	desc = Ethiopia_politics.1.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_ethiopian_soldier
+	option = {
+		name = Ethiopia_politics.1.a
+		ai_chance = { factor = 1 }
+		white_peace = ITA
+		custom_effect_tooltip = Ethiopia_politics.1.a_tt
+		transfer_state = 550
+		transfer_state = 559
+		transfer_state = 812
+		transfer_state = 813
+		hidden_effect = {
+			ITA = { country_event = Ethiopia_politics.2 }
+		}
+	}
+}
+country_event = {
+	id = Ethiopia_politics.2 #peace treaty with ITALY - for ITALY
+	
+	title = Ethiopia_politics.2.t
+	desc = Ethiopia_politics.2.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_gre_italian_troops
+	option = {
+		name = Ethiopia_politics.2.a
+		ai_chance = { factor = 1 }
+		white_peace = ETH
+		hidden_effect = {
+			news_event = Ethiopia_news.1
+		}
+	}
+}
+country_event = {
+	id = Ethiopia_politics.3
+	title = Ethiopia_politics.3.t
+	desc = Ethiopia_politics.3.desc
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_rally_3
+	option = {
+		name = Ethiopia_politics.3.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+		}
+		add_opinion_modifier = {
+			modifier = embargo
+			target = ITA
+		}
+	}
+	option = {
+		name = Ethiopia_politics.3.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 10
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+		}
+	}
+}
+
+######  #######  ######   ######   ###### ######   #####   ######   ##    ##
+  ##    ##       ##   ##  ##   ##    ##     ##    ##   ##  ##   ##   ##  ##
+  ##    ##       ##   ##  ##   ##    ##     ##    ##   ##  ##   ##    ####
+  ##    ######   ######   ######     ##     ##    ##   ##  ######      ##
+  ##    ##       ## ##    ## ##      ##     ##    ##   ##  ## ##       ##
+  ##    ##       ##  ##   ##  ##     ##     ##    ##   ##  ##  ##      ##
+  ##    #######  ##   ##  ##   ##  ######   ##     #####   ##   ##     ##
+  
+country_event = { #djibouti
+	id = Ethiopia_territory.1
+	hidden = yes
+	immediate = {
+		268 = { set_state_name = "ジブチ" }
+	}
+	fire_only_once = yes
+	trigger = {
+		has_full_control_of_state = 268
+	}
+	
+	mean_time_to_happen = { days = 1 }
+}
+
+##       ##   #####   #####    ######  #######  ######  #######  ######
+###     ###  ##   ##  ##  ##     ##    ##         ##    ##       ##   ##
+####   ####  ##   ##  ##   ##    ##    ##         ##    ##       ##   ##
+## ## ## ##  ##   ##  ##   ##    ##    ######     ##    ######   ######
+##  ###  ##  ##   ##  ##   ##    ##    ##         ##    ##       ## ##
+##       ##  ##   ##  ##  ##     ##    ##         ##    ##       ##  ##
+##       ##   #####   #####    ######  ##       ######  #######  ##   ##
+
+country_event = { #add_lords
+	id = Ethiopia_modifier.1
+	hidden = yes
+	immediate = {
+		807 = {
+			add_dynamic_modifier = { modifier = ETH_independently_lords }
+		}
+		809 = {
+			add_dynamic_modifier = { modifier = ETH_independently_lords }
+		}
+		810 = {
+			add_dynamic_modifier = { modifier = ETH_independently_lords }
+		}
+		811 = {
+			add_dynamic_modifier = { modifier = ETH_independently_lords }
+		}
+		
+	}
+	
+	fire_only_once = yes
+	
+	trigger = {
+		controls_state = 271
+	}
+	
+	mean_time_to_happen = { days = 1 }
+}
+country_event = { #add_lords_somali
+	id = Ethiopia_modifier.2
+	hidden = yes
+	immediate = {
+		559 = {
+			add_dynamic_modifier = { modifier = ETH_independently_lords }
+		}
+		
+	}
+	
+	fire_only_once = yes
+	
+	trigger = {
+		controls_state = 559
+	}
+	
+	mean_time_to_happen = { days = 1 }
+}
+
+##    ##  #######  ##   ##   ##   #####
+###   ##  ##       ##   ##   ##  ##   ##
+####  ##  ##       ##   ##   ##  ##
+## ## ##  ######   ##   ##   ##   #####
+##  ####  ##       ##   ##   ##       ##
+##   ###  ##       ##  ####  ##  ##   ##
+##    ##  #######   ####  ####    #####
+news_event = { #ethiopia wins
+	id = Ethiopia_news.1
+	title = Ethiopia_news.1.t
+	desc = Ethiopia_news.1.d
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Ethiopia_news.1.a
+		trigger = {
+			NOT = {
+				TAG = ETH
+				TAG = ITA
+			}
+		}
+	}
+	option = {
+		name = Ethiopia_news.1.b
+		trigger = {
+			TAG = ITA
+		}
+	}
+	option = {
+		name = Ethiopia_news.1.c
+		trigger = {
+			TAG = ETH
+		}
+	}
+}

@@ -1,0 +1,21 @@
+opinion_modifiers = {
+
+	ETH_anticolonial_dogma = {
+		value = -40
+	}
+	ethiopia_soviet_diplomacy = {
+		value = 20
+	}
+	ethiopia_japan_diplomacy = {
+		value = 20
+	}
+	ethiopia_german_diplomacy = {
+		value = 20
+	}
+	ethiopia_british_diplomacy = {
+		value = 20
+	}
+	ETH_suppress_muslims = {
+		value = -50
+	}
+}

@@ -1,0 +1,354 @@
+ETH_plea_to_league_of_nations = {
+	ETH_speech_about_invasion = {
+		icon = hol_radio_oranje
+		available = {
+			has_completed_focus = ETH_plea_to_league_of_nations
+		}
+		cost = 30
+		days_remove = 60
+		fire_only_once = yes
+		remove_effect = {
+			add_war_support = 0.05
+			set_country_flag = ETH_has_speeched_about_invation
+		}
+	}
+	ETH_request_the_canadian_initiative = {
+		icon = generic_political_rally
+		available = {
+			has_country_flag = ETH_has_speeched_about_invation
+		}
+		cost = 40
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			set_country_flag = ETH_canadian_initiative
+		}
+	}
+	ETH_request_economic_sanction_to_italy = {
+		icon = gre_investment_decisions
+		available = {
+			has_country_flag = ETH_canadian_initiative
+		}
+		days_remove = 100
+		cost = 50
+		fire_only_once = yes
+		remove_effect = {
+			add_political_power = 150
+			ITA = {
+				add_timed_idea = {
+					idea = ETH_embargo_to_italy
+					days = 365
+				}
+			}
+			hidden_effect = {
+				IRE = {
+					country_event = Ethiopia_politics.3
+				}
+				AFG = {
+					country_event = Ethiopia_politics.3
+				}
+				ARG = {
+					country_event = Ethiopia_politics.3
+				}
+				ALB = {
+					country_event = Ethiopia_politics.3
+				}
+				ENG = {
+					country_event = Ethiopia_politics.3
+				}
+				IRQ = {
+					country_event = Ethiopia_politics.3
+				}
+				RAJ = {
+					country_event = Ethiopia_politics.3
+				}
+				URG = {
+					country_event = Ethiopia_politics.3
+				}
+				ECU = {
+					country_event = Ethiopia_politics.3
+				}
+				EST = {
+					country_event = Ethiopia_politics.3
+				}
+				ELS = {
+					country_event = Ethiopia_politics.3
+				}
+				AST = {
+					country_event = Ethiopia_politics.3
+				}
+				AUS = {
+					country_event = Ethiopia_politics.3
+				}
+				HOL = {
+					country_event = Ethiopia_politics.3
+				}
+				CAN = {
+					country_event = Ethiopia_politics.3
+				}
+				CUB = {
+					country_event = Ethiopia_politics.3
+				}
+				GRE = {
+					country_event = Ethiopia_politics.3
+				}
+				COL = {
+					country_event = Ethiopia_politics.3
+				}
+				SIA = {
+					country_event = Ethiopia_politics.3
+				}
+				SWI = {
+					country_event = Ethiopia_politics.3
+				}
+				SWE = {
+					country_event = Ethiopia_politics.3
+				}
+				SPR = {
+					country_event = Ethiopia_politics.3
+				}
+				YUG = {
+					country_event = Ethiopia_politics.3
+				}
+				SOV = {
+					country_event = Ethiopia_politics.3
+				}
+				CZE = {
+					country_event = Ethiopia_politics.3
+				}
+				CHI = {
+					country_event = Ethiopia_politics.3
+				}
+				CHL = {
+					country_event = Ethiopia_politics.3
+				}
+				DEN = {
+					country_event = Ethiopia_politics.3
+				}
+				DOM = {
+					country_event = Ethiopia_politics.3
+				}
+				TUR = {
+					country_event = Ethiopia_politics.3
+				}
+				NZL = {
+					country_event = Ethiopia_politics.3
+				}
+				NOR = {
+					country_event = Ethiopia_politics.3
+				}
+				HAI = {
+					country_event = Ethiopia_politics.3
+				}
+				PAN = {
+					country_event = Ethiopia_politics.3
+				}
+				HUN = {
+					country_event = Ethiopia_politics.3
+				}
+				FIN = {
+					country_event = Ethiopia_politics.3
+				}
+				FRA = {
+					country_event = Ethiopia_politics.3
+				}
+				BUL = {
+					country_event = Ethiopia_politics.3
+				}
+				BEL = {
+					country_event = Ethiopia_politics.3
+				}
+				PRU = {
+					country_event = Ethiopia_politics.3
+				}
+				VEN = {
+					country_event = Ethiopia_politics.3
+				}
+				PER = {
+					country_event = Ethiopia_politics.3
+				}
+				POL = {
+					country_event = Ethiopia_politics.3
+				}
+				BOL = {
+					country_event = Ethiopia_politics.3
+				}
+				POR = {
+					country_event = Ethiopia_politics.3
+				}
+				SAF = {
+					country_event = Ethiopia_politics.3
+				}
+				MEX = {
+					country_event = Ethiopia_politics.3
+				}
+				LAT = {
+					country_event = Ethiopia_politics.3
+				}
+				LIT = {
+					country_event = Ethiopia_politics.3
+				}
+				LIB = {
+					country_event = Ethiopia_politics.3
+				}
+				ROM = {
+					country_event = Ethiopia_politics.3
+				}
+				RUX = {
+					country_event = Ethiopia_politics.3
+				}
+			}
+			custom_effect_tooltip = ETH_request_economic_sanction_to_italy_tt
+		}
+	}
+	ETH_buy_weapons_by_uk = {
+		available = {
+			NOT = { has_global_flag = ETH_finished_eth_war }
+			has_completed_focus = ETH_plea_to_league_of_nations
+		}
+		
+		icon = generic_industry
+			
+		cost = 25
+		days_remove = 90
+		days_re_enable = 90
+		modifier = {
+			civilian_factory_use = 1
+		}
+		complete_effect = {
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = ENG
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = -1
+				}
+			}
+		}
+	}
+	ETH_buy_weapons_by_usa = {
+		available = {
+			NOT = { has_global_flag = ETH_finished_eth_war }
+			has_completed_focus = ETH_plea_to_league_of_nations
+		}
+		
+		icon = generic_industry
+			
+		cost = 25
+		days_remove = 90
+		days_re_enable = 90
+		modifier = {
+			civilian_factory_use = 1
+		}
+		complete_effect = {
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 350
+				producer = USA
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = -1
+				}
+			}
+		}
+	}
+	ETH_buy_weapons_by_france = {
+		available = {
+			NOT = { has_global_flag = ETH_finished_eth_war }
+			has_completed_focus = ETH_plea_to_league_of_nations
+		}
+		
+		icon = generic_industry
+			
+		cost = 25
+		days_remove = 90
+		days_re_enable = 90
+		modifier = {
+			civilian_factory_use = 1
+		}
+		complete_effect = {
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = FRA
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = -1
+				}
+			}
+		}
+	}
+}
+ETH_lords_treating = {
+	ETH_befriend_gojjam_lord = {
+		icon = hol_exchange_intelligence_data
+		highlight_state_targets = { state = 810 }
+	}
+	ETH_break_gojjam_lord = {
+		icon = oppression
+		highlight_state_targets = { state = 810 }
+	}
+	ETH_befriend_afar_lord = {
+		icon = hol_exchange_intelligence_data
+		highlight_state_targets = { state = 811 }
+	}
+	ETH_break_afar_lord = {
+		icon = oppression
+		highlight_state_targets = { state = 811 }
+	}
+	ETH_befriend_somali_lord = {
+		icon = hol_exchange_intelligence_data
+		highlight_state_targets = { state = 807 }
+	}
+	ETH_break_somali_lord = {
+		icon = oppression
+		highlight_state_targets = { state = 807 }
+	}
+	ETH_befriend_oromia_lord = {
+		icon = hol_exchange_intelligence_data
+		highlight_state_targets = { state = 809 }
+	}
+	ETH_break_oromia_lord = {
+		icon = oppression
+		highlight_state_targets = { state = 809 }
+	}
+	ETH_befriend_somalia_clan = {
+		icon = hol_exchange_intelligence_data
+		highlight_state_targets = { state = 559 }
+	}
+	ETH_break_somalia_clan = {
+		icon = oppression
+		highlight_state_targets = { state = 559 }
+	}
+}

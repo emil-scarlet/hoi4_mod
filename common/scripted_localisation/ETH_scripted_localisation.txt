@@ -1,0 +1,26 @@
+defined_text = { # Country
+	name = GetBlackLionsName
+	text = {
+		trigger = {
+			original_tag = ETH
+			has_government = neutrality
+		}
+		localization_key = ETH_BLACK_LIONS_NAME_EMPIRE
+	}
+	text = {
+		trigger = {
+			original_tag = ETH
+			is_subject_of = ITA
+		}
+		localization_key = ETH_BLACK_LIONS_NAME_AOC
+	}
+	text = {
+		localization_key = ETH_BLACK_LIONS_NAME_EMPIRE
+	}
+}
+defined_text = { # Country
+	name = GetEthWarExhaustionDesc
+	text = {
+		localization_key = ETH_WAR_EXHAUSTION_DESC
+	}
+}

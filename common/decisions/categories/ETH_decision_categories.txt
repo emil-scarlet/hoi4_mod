@@ -1,0 +1,24 @@
+ETH_plea_to_league_of_nations = {
+	icon = generic_formable_nations
+	visible = {
+		has_completed_focus = ETH_plea_to_league_of_nations
+		has_war = yes
+		NOT = {
+			has_global_flag = ETH_finished_eth_war
+		}
+	}
+}
+ETH_recovery_from_war　= {
+	icon = generic_arms_trade
+	visible = {
+		has_completed_focus = ETH_talaki_dili
+	}
+}
+
+ETH_lords_treating = {
+	icon = saf_anti_colonialist_crusade
+	picture = GFX_decision_cat_picture_eth_lords
+	visible = {
+		has_completed_focus = ETH_kingdom_of_judah
+	}
+}

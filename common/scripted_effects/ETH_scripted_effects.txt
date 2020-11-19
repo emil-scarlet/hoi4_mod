@@ -1,0 +1,45 @@
+#reduce exhaustions
+ETH_war_exhaustion_level_down = {
+	if = {
+		limit = {
+			has_idea = ETH_war_exhaustion_1
+		}
+		remove_ideas = ETH_war_exhaustion_1
+	}
+	else_if = {
+		limit = {
+			has_idea = ETH_war_exhaustion_2
+		}
+		swap_ideas = {
+			remove_idea = ETH_war_exhaustion_2
+			add_idea = ETH_war_exhaustion_1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = ETH_war_exhaustion_3
+		}
+		swap_ideas = {
+			remove_idea = ETH_war_exhaustion_3
+			add_idea = ETH_war_exhaustion_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = ETH_war_exhaustion_4
+		}
+		swap_ideas = {
+			remove_idea = ETH_war_exhaustion_4
+			add_idea = ETH_war_exhaustion_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = ETH_war_exhaustion_5
+		}
+		swap_ideas = {
+			remove_idea = ETH_war_exhaustion_5
+			add_idea = ETH_war_exhaustion_4
+		}
+	}
+}

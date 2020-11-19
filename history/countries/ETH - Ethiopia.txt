@@ -1,0 +1,179 @@
+﻿capital = 271
+
+oob = "ETH_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_mountaineers = 1
+}
+
+add_ideas = {
+	ETH_slavery
+	ETH_non_modernized_country
+	export_focus
+	extensive_conscription
+	partial_economic_mobilisation
+	ETH_mulugeta_yeggazu
+	ETH_independent_lords
+	ETH_feudal_army
+}
+set_convoys = 5
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+# A colony of Italy in 1939, however if independent it would have the same politics as in 1936
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 86
+	fascism = 13
+	democratic = 1
+}
+
+create_country_leader = {
+	name = "Haile Selassie"
+	desc = "POLITICS_HAILE_SELASSIE_DESC"
+	picture = "Portrait_Ethiopia_Haile_Selassie.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Fitawrari Yeebio Woldai"
+	desc = "POLITICS_YEEBIO_WOLDAI_DESC"
+	picture = "Portrait_Ethiopia_Haile_Selassie.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Tafari Benti"
+	desc = "POLITICS_HAILE_SELASSIE_DESC"
+	picture = "Portrait_Ethiopia_Tafari_Benti.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	name = "Hailu Tekle Haymanot"
+	desc = "POLITICS_HAILE_SELASSIE_DESC"
+	picture = "Portrait_Ethiopia_Hailu_Tekle_Haymanot.dds"
+	expire = "1965.1.1"
+	ideology = falangism
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Haile Selassie"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Haile_Selassie.dds"
+	traits = {  politically_connected old_guard }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+	id = 5610
+}
+create_corps_commander = {
+	name = "Mulugeta Yeggazu"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Mulugeta_Yeggazu.dds"
+	traits = {  harsh_leader }
+	skill = 3
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 1
+	id = 5611
+}
+create_corps_commander = {
+	name = "Seyoum Mengesha"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Seyoum_Mengesha.dds"
+	traits = {  desert_fox }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+	id = 5612
+}
+create_corps_commander = {
+	name = "Kassa Haile Darge"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Kassa_Haile_Darge.dds"
+	traits = {  infantry_officer trickster }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 4
+	id = 5613
+}
+create_corps_commander = {
+	name = "Imru Haile Selassie"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Imru_Haile_Selassie.dds"
+	traits = {  trait_mountaineer }
+	skill = 1
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+	id = 5614
+}
+create_corps_commander = {
+	name = "Abebe Aregai"
+	portrait_path = "gfx/leaders/ETH/Portrait_Ethiopia_Abebe_Aregai.dds"
+	traits = {  trait_cautious commando }
+	skill = 1
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+	id = 5615
+}
